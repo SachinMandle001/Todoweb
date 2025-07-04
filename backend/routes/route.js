@@ -28,8 +28,9 @@ router.post('/todo', async (req, res) => {
     try {
         const collection = getCollection();  
         let{task}=req.body          
-        let newToDo = await collection.insertOne({task,status:false});
-        res.status(201).json({ task, status:false,_id: newToDo.insertedId });
+        let newToDo = await collection.insertOne({task,status:false,progress:0});
+
+        res.status(201).json({task,status:false,progress:0,_id: newToDo.insertedId});
     } catch (error) {
         console.error(error.message);
         res.status(500).json({ error: 'Internal Server Error' });
