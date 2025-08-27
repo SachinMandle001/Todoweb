@@ -16,6 +16,18 @@ app.get('/',(req, res)=>{
 
 app.use('/api',userRouter)
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+cron.schedule('*/10 * * * *', async () => {
+  try {
+    const res = await axios.get('https://sachin-todowebapp.onrender.com/health');
+    console.log(`Self-ping success: ${res.status}`);
+  } catch (err) {
+    console.error('Self-ping failed:', err.message);
+  }
+});
 const PORT = process.env.PORT || 5000; 
 
 app.listen(PORT, async () => {

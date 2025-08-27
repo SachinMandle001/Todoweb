@@ -11,8 +11,8 @@ const getCollection = () => {
 
 //Trigger-Reminder
 
-const triggerReminder = require('../utils/trigger_reminder');
-router.get('/todo/trigger', triggerReminder);
+//const triggerReminder = require('../utils/trigger_reminder');
+//router.get('/todo/trigger', triggerReminder);
 
 
 
