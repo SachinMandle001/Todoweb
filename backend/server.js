@@ -8,7 +8,16 @@ const axios=require('axios')
 const userRouter =require('./routes/route')
 app.use(express.json())
 
-app.use(express.static(path.join(__dirname,'dist')))
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://sachin-todowebapp-frontend.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
+}));
+
+// app.use(express.static(path.join(__dirname,'dist')))
 
 const { connectDB } = require('./database/mydbconnection')
 
@@ -24,7 +33,7 @@ app.get('/health', (req, res) => {
 
 cron.schedule('*/10 * * * *', async () => {
   try {
-    const res = await axios.get('https://sachin-todowebapp.onrender.com/health');
+    const res = await axios.get('https://sachin-todowebapp-backend.onrender.com/health');
     console.log(`Self-ping success: ${res.status}`);
   } catch (err) {
     console.error('Self-ping failed:', err.message);

@@ -8,7 +8,7 @@ function ToDo({todo,setToDos}) {
 
  const updateProgress = async(todoId,todoProgress)=>{
 
-        const res =await fetch(`/api/todo/${todoId}`,{
+        const res =await fetch(`https://sachin-todowebapp-backend.onrender.com/api/todo/${todoId}`,{
         
         method: "PUT",
         body: JSON.stringify({progress: todoProgress }),
@@ -38,7 +38,7 @@ function ToDo({todo,setToDos}) {
 
     const updateToDo = async(todoId,todoStatus)=>{
 
-        const res =await fetch(`/api/todo/${todoId}`,{
+        const res =await fetch(`https://sachin-todowebapp-backend.onrender.com/api/todo/${todoId}`,{
         
         method: "PUT",
         body: JSON.stringify({status: todoStatus }),
@@ -62,7 +62,7 @@ function ToDo({todo,setToDos}) {
 
     //DELETE OPERATION
     const deleteToDo=async(todoId)=>{
-        const res=await fetch(`/api/todo/${todoId}`,{
+        const res=await fetch(`https://sachin-todowebapp-backend.onrender.com/api/todo/${todoId}`,{
             method:"DELETE"
         })
         const data =await res.json()

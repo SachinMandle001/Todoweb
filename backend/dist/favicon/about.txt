@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Caveat
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/caveat/v22/WnznHAc5bAfYB2QRah7pcpNvOx-pjcB9SIKjYBxPigs.ttf
-- Font License: undefined)

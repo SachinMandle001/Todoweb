@@ -11,7 +11,7 @@ const [content, setContent] = useState('')
 useEffect(() => {
   const getToDos = async()=>{
     try {
-      const response=await fetch('/api/todo')
+      const response=await fetch('https://sachin-todowebapp-backend.onrender.com/api/todo')
        if (!response.ok) throw new Error("Failed to fetch");
         const json = await response.json();
         setToDos(json);
@@ -28,7 +28,7 @@ useEffect(() => {
 const createToDo =async(e)=>{
   e.preventDefault();
   try {
-      const res = await fetch('/api/todo', {
+      const res = await fetch('https://sachin-todowebapp-backend.onrender.com/api/todo', {
         method: "POST",
         body: JSON.stringify({ task: content }),
         headers: {
