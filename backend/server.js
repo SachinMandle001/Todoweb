@@ -21,9 +21,9 @@ app.use(cors({
 
 const { connectDB } = require('./database/mydbconnection')
 
-app.get('/',(req, res)=>{
-    res.sendFile(path.join(__dirname,'dist/index.html'))
-})
+// app.get('/',(req, res)=>{
+//     res.sendFile(path.join(__dirname,'dist/index.html'))
+// })
 
 app.use('/api',userRouter)
 
