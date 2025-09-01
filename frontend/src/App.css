@@ -2,7 +2,7 @@
 
 
 body{
-    background:url('light.png');
+    background:url('/light.png');
     background-size: cover;
     background-position: center;
     background-repeat:inherit;
